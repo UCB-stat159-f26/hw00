@@ -4,9 +4,9 @@ This course uses CS++ and Github to manage assignments.
 
 In general the workflow for you will be the same for all assignments (we'll update this document as we refine the process and learn new details):
 
-- You will be given a special URL to start the assignment. 
+- The assignment will show up on CS++  
 
-- That link lets you create a new repository from our template, containing this README file with general instructions, plus the specifics of the given assignment.
+- The CS++ assignment creates a new repository from our template, containing this README file with general instructions, plus the specifics of the given assignment.
 
 - You will work in your repository, alone or in teams (depending on whether it's an individual or group assignment).  You will push your changes to the repository, adding new files, images, etc, to meet the requirements of the assignment.
 
