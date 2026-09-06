@@ -1,0 +1,87 @@
+---
+title: "HW00: Mock submission"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+* **Statistics 159/259, Fall 2026**
+* Prof. Gaston Sanchez, Department of Statistics, UC Berkeley
+* GSIs: Sequoia Andrade & Larissa Arreola Moreno
+
+* This assignment is worth a maximum of **40 points**.
+* Assignment type: **individual**.
+
+**Deliverable:** for this assignment, your github repository should contain:
+
+- This notebook, completed so it includes code for plots and simulations, along with your written responses and discussion. Please remember to use markdown headings for each section/subsection so the entire document is readable.
+
+**Collaboration Policy**
+
+Data science is a collaborative activity. While you may talk with others about
+the project, we ask that you **write your solutions individually**. If you do
+discuss the assignments with others please **include their names** below:
+
+## TODO  - HW00
+### Notebook: coding exercise
+**Now switch to this notebook** — the rest of Part 2 happens in the cells below, as ordinary R.
+
+This is `hw00` **Q1: dictionaries for counting words**. A common text-processing task: count how often each word appears, using a dictionary.
+
+Fill in `word_freq` below: split `text` into words on whitespace, and build a dictionary mapping each word to how many times it appears.
+
+```{r word-freq}
+word_freq <- function(text) {
+  # Return a dictionary of word frequencies for the given text.
+  freqs <- list()
+  # TODO: split text into words, and count them into freqs
+  freqs
+}
+
+
+print_vk <- function(pairs) {
+  # pairs is a data frame with columns `word`, `count`, already sorted.
+  for (i in seq_len(nrow(pairs))) {
+    cat(pairs$word[i], ": ", pairs$count[i], "\n", sep = "")
+  }
+}
+
+
+freq_summ <- function(freqs, n = 10) {
+  # Print a simple summary of a word frequencies dictionary.
+  df <- data.frame(word = names(freqs), count = unlist(freqs))
+  df <- df[order(-df$count), ]
+  cat("Top", n, "words:\n")
+  print_vk(head(df, n))
+  cat("\nBottom", n, "words:\n")
+  print_vk(tail(df, n))
+}
+```
+
+Try it on a short sample text:
+
+```{r word-freq-check}
+sample_text <- "
+the quick brown fox jumps over the lazy dog
+the dog barks at the fox but the fox runs away
+the quick fox is quicker than the lazy dog every single time
+"
+
+freqs <- word_freq(sample_text)
+freq_summ(freqs, n = 3)
+```
+
+## TODO
+### Terminal: save your final progress
+**Back in the terminal**:
+
+```bash
+git clone <link to your repo>
+git add HW00.Rmd
+git commit -m "Complete word frequency counting exercise"
+git log --oneline
+```
+
+# Congratulations! You have completed Homework 0!
